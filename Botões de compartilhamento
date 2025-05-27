@@ -1,0 +1,27 @@
+<div class="social-share">
+    <p>Compartilhe nossa rádio:</p>
+    <div class="social-buttons">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=URL_DA_PAGINA" target="_blank" rel="noopener">
+            <img src="assets/icons/facebook-icon.svg" alt="Compartilhar no Facebook">
+        </a>
+        
+        <!-- Twitter -->
+        <a href="https://twitter.com/intent/tweet?text=Ouça%20MAPIM%20Web%20Rádio&url=URL_DA_PAGINA" target="_blank" rel="noopener">
+            <img src="assets/icons/twitter-icon.svg" alt="Compartilhar no Twitter">
+        </a>
+        
+        <!-- WhatsApp -->
+        <a href="https://wa.me/?text=Ouça%20MAPIM%20Web%20Rádio:%20URL_DA_PAGINA" target="_blank" rel="noopener">
+            <img src="assets/icons/whatsapp-icon.svg" alt="Compartilhar no WhatsApp">
+        </a>
+    </div>
+    
+    <div class="social-follow">
+        <p>Siga-nos:</p>
+        <a href="https://facebook.com/mapimwebradio" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/mapimwebradio" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://twitter.com/mapimwebradio" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://youtube.com/mapimwebradio" target="_blank" rel="noopener">YouTube</a>
+    </div>
+</div>
