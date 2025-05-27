@@ -1,0 +1,23 @@
+<!-- Meta tags importantes -->
+<meta name="description" content="MAPIM Web Rádio - A melhor programação musical e jornalística 24h por dia. Ouça online de qualquer lugar!">
+<meta name="keywords" content="rádio online, web rádio, música ao vivo, programação de rádio, MAPIM rádio">
+<meta property="og:title" content="MAPIM Web Rádio - Transmitindo Ao Vivo">
+<meta property="og:description" content="Ouça a MAPIM Web Rádio de qualquer lugar do mundo!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mapimwebradio.com.br">
+<meta property="og:image" content="https://mapimwebradio.com.br/assets/images/social-share.jpg">
+
+<!-- Schema.org para rádio -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RadioStation",
+  "name": "MAPIM Web Rádio",
+  "description": "Rádio online com programação musical e jornalística 24h",
+  "url": "https://mapimwebradio.com.br",
+  "logo": "https://mapimwebradio.com.br/assets/images/logo-mapim.png",
+  "streamUrl": "https://seuservidor:8000/stream",
+  "broadcastTimezone": "America/Sao_Paulo",
+  "genre": ["Music", "News", "Talk"]
+}
+</script>
