@@ -1,0 +1,74 @@
+/* Estilos base */
+.radio-player {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Layout para desktop */
+@media (min-width: 768px) {
+    .radio-player {
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .player-controls {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-grow: 1;
+    }
+}
+
+/* Layout para mobile */
+@media (max-width: 767px) {
+    .play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .player-info {
+        margin-top: 1rem;
+    }
+    
+    .volume-control {
+        width: 100%;
+    }
+}
+
+/* Botão de play responsivo */
+.play-button {
+    background: #e94560;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+}
+
+.pause-icon {
+    display: none;
+}
+
+.playing .play-icon {
+    display: none;
+}
+
+.playing .pause-icon {
+    display: block;
+}
