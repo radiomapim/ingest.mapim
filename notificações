@@ -1,0 +1,41 @@
+// Solicitar permissão
+function requestNotificationPermission() {
+    if ('Notification' in window) {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                subscribeToPushNotifications();
+            }
+        });
+    }
+}
+
+// Registrar Service Worker para push
+function subscribeToPushNotifications() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(registration => {
+            registration.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlBase64ToUint8Array('SUA_CHAVE_PUBLICA_VAPID')
+            }).then(subscription => {
+                // Enviar subscription para seu servidor
+                saveSubscription(subscription);
+            });
+        });
+    }
+}
+
+// Exemplo para notificar sobre programa ao vivo
+function notifyLiveProgram(programName, startTime) {
+    if (Notification.permission === 'granted') {
+        navigator.serviceWorker.getRegistration().then(reg => {
+            reg.showNotification(`Programa ao vivo: ${programName}`, {
+                body: `Começando agora às ${startTime}! Clique para ouvir.`,
+                icon: 'assets/images/live-icon.png',
+                vibrate: [200, 100, 200],
+                data: {
+                    url: window.location.href
+                }
+            });
+        });
+    }
+}
