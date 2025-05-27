@@ -1,0 +1,42 @@
+const audioPlayer = document.getElementById('radio-stream');
+const playBtn = document.getElementById('play-btn');
+const volumeControl = document.getElementById('volume');
+const nowPlaying = document.getElementById('now-playing');
+const playerStatus = document.getElementById('player-status');
+
+// Controle de play/pause
+playBtn.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+        audioPlayer.play()
+            .then(() => {
+                playBtn.classList.add('playing');
+                playerStatus.textContent = "Transmitindo agora...";
+            })
+            .catch(error => {
+                playerStatus.textContent = "Erro ao iniciar: " + error.message;
+            });
+    } else {
+        audioPlayer.pause();
+        playBtn.classList.remove('playing');
+        playerStatus.textContent = "Pausado";
+    }
+});
+
+// Controle de volume
+volumeControl.addEventListener('input', () => {
+    audioPlayer.volume = volumeControl.value;
+});
+
+// Atualizar informações da música (se seu servidor suportar)
+function updateNowPlaying() {
+    fetch('https://seuservidor:8000/nowplaying')
+        .then(response => response.json())
+        .then(data => {
+            nowPlaying.textContent = `${data.title} - ${data.artist}`;
+        })
+        .catch(() => {
+            nowPlaying.textContent = "MAPIM Web Rádio - Programação Ao Vivo";
+        });
+}
+
+setInterval(updateNowPlaying, 30000); // Atualiza a cada 30 segundos
