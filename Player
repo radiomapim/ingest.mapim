@@ -1,0 +1,17 @@
+<div class="radio-player">
+    <audio id="radio-stream" src="https://seuservidor:8000/stream" preload="none"></audio>
+    <div class="player-controls">
+        <button id="play-btn" class="play-button">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon">❚❚</span>
+        </button>
+        <div class="player-info">
+            <div id="now-playing">MAPIM Web Rádio - Ao Vivo</div>
+            <div class="volume-control">
+                <span class="volume-icon">🔈</span>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+            </div>
+        </div>
+    </div>
+    <div id="player-status" class="status">Pronto para transmitir</div>
+</div>
